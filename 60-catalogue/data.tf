@@ -37,5 +37,5 @@ data "aws_ami" "joindevops" {
 
 
     data "aws_ssm_parameter" "backend_alb_listener_arn" {
-        name  = "/${var.project_name}/${var.environment}/backend_alb_listener_arn"
+        name  = "/${var.project_name}/${var.environment}/backend_alb_listener_arn"     
 }    
