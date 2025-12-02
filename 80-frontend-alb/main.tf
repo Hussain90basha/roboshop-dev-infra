@@ -33,3 +33,16 @@ resource "aws_lb_listener" "frontend_alb" {
     }
   }
 }
+
+resource "aws_route53_record" "frontend_alb" {
+  zone_id = var.zone_id
+  name    = "*.backend-alb-${var.environment}.${var.domain_name}"
+  type    = "A"
+
+  alias {
+    # these are ALB details, are not our domain details
+    name                   = aws_lb.frontend_alb.dns_name
+    zone_id                = aws_lb.frontend_alb.zone_id
+    evaluate_target_health = true
+  }
+}
