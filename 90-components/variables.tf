@@ -1,5 +1,5 @@
 variable "component" {
-    default = catalogue
+    default = "catalogue"
 }
 
 variable "rule_priority" {
