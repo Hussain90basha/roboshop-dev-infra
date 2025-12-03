@@ -105,7 +105,7 @@ resource "aws_launch_template" "catalogue" {
     }
   )
    
-}
+ }
 
  # tags attached to the volume created by instance
   tag_specifications {
